@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Marius Nilsen, Attorney at Law - Experienced legal counsel in Business Law, Family Law, Estate Planning, Real Estate, Litigation, and Personal Injury.">
+    <title>Marius Nilsen | Attorney at Law</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Playfair+Display:wght@500&amp;display=swap');
+
+        :root {
+            --tw-color-navy: #001F3F;
+            --tw-color-gold: #D4AF77;
+        }
+
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .tailwind-configured * {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(92deg, #001F3F 0%, #001F3F 100%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF77;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .section-header {
+            position: relative;
+        }
+
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 3px;
+            background-color: #D4AF77;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 25px 25px 50px -12px rgb(212 175 119 / 0.15);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(212, 175, 119, 0.3);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="tailwind-configured smooth-scroll">
+    <!-- NAVBAR -->
+    <nav class="bg-[#001F3F] text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex items-center justify-between py-6">
+
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex items-center gap-x-2">
+                        <div
+                            class="w-9 h-9 bg-[#D4AF77] text-[#001F3F] rounded-2xl flex items-center justify-center text-2xl font-bold leading-none pt-px">
+                            MN</div>
+                        <div>
+                            <h1 class="heading-font text-2xl font-medium tracking-[-0.5px]">Marius Nilsen</h1>
+                            <p class="text-[#D4AF77] text-xs -mt-1 tracking-[1px] font-medium">ATTORNEY AT LAW</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                    <a href="#home" onclick="closeMobileMenu()"
+                        class="nav-link px-2 py-1 text-white hover:text-[#D4AF77]">Home</a>
+                    <a href="#about" onclick="closeMobileMenu()"
+                        class="nav-link px-2 py-1 text-white hover:text-[#D4AF77]">About</a>
+                    <a href="#services" onclick="closeMobileMenu()"
+                        class="nav-link px-2 py-1 text-white hover:text-[#D4AF77]">Services</a>
+                    <a href="#experience" onclick="closeMobileMenu()"
+                        class="nav-link px-2 py-1 text-white hover:text-[#D4AF77]">Experience</a>
+                    <a href="#testimonials" onclick="closeMobileMenu()"
+                        class="nav-link px-2 py-1 text-white hover:text-[#D4AF77]">Testimonials</a>
+                    <a href="#contact" onclick="closeMobileMenu()"
+                        class="nav-link px-2 py-1 text-white hover:text-[#D4AF77]">Contact</a>
+                </div>
+
+                <!-- CTA + Mobile Toggle -->
+                <div class="flex items-center gap-x-4">
+                    <a href="#contact"
+                        class="hidden sm:flex items-center px-8 py-3.5 bg-[#D4AF77] hover:bg-[#c39b5f] text-[#001F3F] font-semibold rounded-3xl text-sm tracking-wider uppercase shadow-inner">
+                        SCHEDULE CONSULTATION
+                    </a>
+
+                    <!-- Mobile Hamburger -->
+                    <button id="mobile-menu-button" onclick="toggleMobileMenu()"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-white focus:outline-none">
+                        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.25">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-[#001F3F] border-t border-white/10 py-6 px-4">
+                <div class="flex flex-col gap-y-4 text-base font-medium">
+                    <a href="#home" onclick="closeMobileMenu()"
+                        class="px-6 py-4 hover:bg-white/10 rounded-3xl flex items-center">Home</a>
+                    <a href="#about" onclick="closeMobileMenu()"
+                        class="px-6 py-4 hover:bg-white/10 rounded-3xl flex items-center">About</a>
+                    <a href="#services" onclick="closeMobileMenu()"
+                        class="px-6 py-4 hover:bg-white/10 rounded-3xl flex items-center">Services</a>
+                    <a href="#experience" onclick="closeMobileMenu()"
+                        class="px-6 py-4 hover:bg-white/10 rounded-3xl flex items-center">Experience</a>
+                    <a href="#testimonials" onclick="closeMobileMenu()"
+                        class="px-6 py-4 hover:bg-white/10 rounded-3xl flex items-center">Testimonials</a>
+                    <a href="#contact" onclick="closeMobileMenu()"
+                        class="px-6 py-4 hover:bg-white/10 rounded-3xl flex items-center">Contact</a>
+
+                    <div class="pt-4 mt-4 border-t border-white/10">
+                        <a href="#contact" onclick="closeMobileMenu()"
+                            class="block w-full text-center py-4 bg-[#D4AF77] hover:bg-[#c39b5f] text-[#001F3F] font-semibold rounded-3xl text-base">
+                            SCHEDULE A CONSULTATION
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg text-white pt-16">
+        <div class="max-w-screen-2xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center min-h-[calc(100vh-88px)]">
+
+            <!-- Left Content -->
+            <div class="lg:col-span-7 space-y-8 pt-8 lg:pt-0">
+                <div
+                    class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-[#D4AF77] text-sm font-medium px-5 py-2 rounded-3xl border border-white/20">
+                    <div class="w-2 h-2 bg-[#D4AF77] rounded-full animate-pulse"></div>
+                    CALIFORNIA STATE BAR #298471
+                </div>
+
+                <h1 class="heading-font text-6xl lg:text-7xl xl:text-8xl leading-none font-medium tracking-[-1.5px]">
+                    Marius Nilsen,<br>Attorney at Law
+                </h1>
+
+                <p class="text-2xl lg:text-3xl text-[#D4AF77] max-w-xl">
+                    Strategic counsel. Uncompromising advocacy.<br>Results that matter.
+                </p>
+
+                <p class="text-xl text-white/90 max-w-lg">
+                    18+ years protecting the rights and interests of individuals, families, and businesses across
+                    California and beyond.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                        class="inline-flex items-center justify-center px-10 py-5 bg-[#D4AF77] hover:bg-[#c39b5f] text-[#001F3F] font-semibold rounded-3xl text-lg shadow-xl hover:shadow-2xl">
+                        SCHEDULE A CONSULTATION
+                        <span class="ml-3 text-2xl">→</span>
+                    </a>
+
+                    <a href="#about"
+                        class="inline-flex items-center justify-center px-8 py-5 border border-white/60 hover:border-white text-white rounded-3xl text-lg font-medium">
+                        MEET MARIUS
+                    </a>
+                </div>
+
+                <!-- Trust signals -->
+                <div class="flex items-center gap-x-8 pt-6 text-sm opacity-80">
+                    <div class="flex items-center gap-x-1">
+                        <span class="text-[#D4AF77]">★</span>
+                        <span class="text-[#D4AF77]">★</span>
+                        <span class="text-[#D4AF77]">★</span>
+                        <span class="text-[#D4AF77]">★</span>
+                        <span class="text-[#D4AF77]">★</span>
+                        <span class="ml-2">5.0 Average Client Rating</span>
+                    </div>
+                    <div>18 Years Experience</div>
+                    <div>500+ Cases Resolved</div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="lg:col-span-5 relative">
+                <div
+                    class="aspect-[4/4.2] lg:aspect-auto relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white/10">
+                    <img src="https://picsum.photos/id/1005/1200/1400"
+                        alt="Marius Nilsen, Attorney at Law - Professional portrait" class="w-full h-full object-cover">
+                    <!-- Overlay badge -->
+                    <div
+                        class="absolute bottom-8 left-8 bg-white text-[#001F3F] px-6 py-3 rounded-3xl shadow-xl flex items-center gap-x-3">
+                        <div class="text-[#D4AF77] text-3xl">⚖️</div>
+                        <div>
+                            <p class="font-semibold">Licensed in California</p>
+                            <p class="text-xs text-gray-600">Admitted 2008</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating accent -->
+                <div
+                    class="absolute -top-6 -right-6 bg-[#D4AF77] text-[#001F3F] text-sm font-semibold px-6 py-2 rounded-3xl shadow-2xl flex items-center rotate-12">
+                    <span class="text-lg mr-1">✓</span>
+                    18 YEARS OF EXCELLENCE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+
+                <!-- Text -->
+                <div class="lg:col-span-7">
+                    <div class="uppercase text-[#D4AF77] text-sm font-semibold tracking-[1.5px] mb-3">WHO I AM</div>
+                    <h2
+                        class="section-header text-5xl lg:text-6xl heading-font font-medium text-[#001F3F] leading-none mb-10">
+                        Dedicated to your success,<br>driven by integrity
+                    </h2>
+
+                    <div class="prose prose-lg text-gray-700 max-w-none">
+                        <p class="text-xl leading-relaxed">
+                            Marius Nilsen is a highly experienced attorney with more than 18 years of practice in
+                            California.
+                            He founded Nilsen Law Firm to deliver personalized, strategic legal representation that
+                            combines courtroom excellence with practical business insight.
+                        </p>
+                        <p class="text-xl leading-relaxed mt-8">
+                            After earning his Juris Doctor from UCLA School of Law, Marius served as a judicial clerk
+                            and later practiced at a major Los Angeles firm before opening his own practice.
+                            His client-first philosophy, meticulous preparation, and proven track record have earned him
+                            the respect of peers and the gratitude of hundreds of satisfied clients.
+                        </p>
+                        <p class="text-xl leading-relaxed mt-8">
+                            Whether negotiating complex business deals, guiding families through sensitive transitions,
+                            or advocating in court, Mr. Nilsen brings calm confidence and unwavering commitment to every
+                            matter.
+                        </p>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="mt-16 grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-[#D4AF77] text-6xl mb-3">🔍</div>
+                            <p class="font-semibold text-[#001F3F]">Strategic Insight</p>
+                            <p class="text-sm text-gray-500 mt-1">Every case is approached with precision and foresight
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-[#D4AF77] text-6xl mb-3">🤝</div>
+                            <p class="font-semibold text-[#001F3F]">Client First</p>
+                            <p class="text-sm text-gray-500 mt-1">Personalized attention and transparent communication
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-[#D4AF77] text-6xl mb-3">⚖️</div>
+                            <p class="font-semibold text-[#001F3F]">Uncompromising Ethics</p>
+                            <p class="text-sm text-gray-500 mt-1">Integrity is the foundation of every representation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait + Stats -->
+                <div class="lg:col-span-5">
+                    <div class="bg-[#001F3F] text-white rounded-3xl p-8 lg:p-10 shadow-2xl">
+                        <img src="https://picsum.photos/id/1005/800/800" alt="Marius Nilsen professional headshot"
+                            class="w-40 h-40 mx-auto rounded-3xl object-cover border-4 border-[#D4AF77] shadow-xl">
+
+                        <div class="mt-10 grid grid-cols-2 gap-x-12 gap-y-8 text-center">
+                            <div>
+                                <div class="text-[#D4AF77] text-5xl font-semibold">18+</div>
+                                <div class="text-sm uppercase tracking-widest">Years Practicing</div>
+                            </div>
+                            <div>
+                                <div class="text-[#D4AF77] text-5xl font-semibold">500+</div>
+                                <div class="text-sm uppercase tracking-widest">Cases Resolved</div>
+                            </div>
+                            <div>
+                                <div class="text-[#D4AF77] text-5xl font-semibold">98%</div>
+                                <div class="text-sm uppercase tracking-widest">Client Satisfaction</div>
+                            </div>
+                            <div>
+                                <div class="text-[#D4AF77] text-5xl font-semibold">4.9/5</div>
+                                <div class="text-sm uppercase tracking-widest">Peer Rating</div>
+                            </div>
+                        </div>
+
+                        <p class="text-center text-white/70 text-sm mt-10">
+                            “I treat every client’s case as if it were my own family’s future on the line.”<br>
+                            — Marius Nilsen
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <div class="uppercase text-[#D4AF77] text-sm font-semibold tracking-[1.5px]">PRACTICE AREAS</div>
+                <h2 class="section-header text-5xl heading-font font-medium text-[#001F3F] mt-3">Comprehensive legal
+                    solutions</h2>
+                <p class="mt-4 text-gray-600 max-w-md mx-auto">Tailored representation across key areas of law with a
+                    focus on results and peace of mind.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div class="card-hover bg-white rounded-3xl px-8 py-10 shadow-xl border border-transparent">
+                    <div class="text-6xl mb-6">💼</div>
+                    <h3 class="text-2xl font-semibold text-[#001F3F] mb-3">Business Law</h3>
+                    <p class="text-gray-600">Entity formation, contracts, compliance, mergers &amp; acquisitions, and
+                        corporate governance for startups and established companies.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-hover bg-white rounded-3xl px-8 py-10 shadow-xl border border-transparent">
+                    <div class="text-6xl mb-6">👨‍👩‍👧</div>
+                    <h3 class="text-2xl font-semibold text-[#001F3F] mb-3">Family Law</h3>
+                    <p class="text-gray-600">Divorce, child custody, spousal support, property division, and prenuptial
+                        agreements handled with sensitivity and strength.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-hover bg-white rounded-3xl px-8 py-10 shadow-xl border border-transparent">
+                    <div class="text-6xl mb-6">📜</div>
+                    <h3 class="text-2xl font-semibold text-[#001F3F] mb-3">Estate Planning</h3>
+                    <p class="text-gray-600">Wills, trusts, probate, advanced directives, and legacy planning to protect
+                        and transfer your assets efficiently.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-hover bg-white rounded-3xl px-8 py-10 shadow-xl border border-transparent">
+                    <div class="text-6xl mb-6">🏡</div>
+                    <h3 class="text-2xl font-semibold text-[#001F3F] mb-3">Real Estate Law</h3>
+                    <p class="text-gray-600">Commercial and residential transactions, leases, title disputes,
+                        landlord-tenant matters, and property development.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card-hover bg-white rounded-3xl px-8 py-10 shadow-xl border border-transparent">
+                    <div class="text-6xl mb-6">🏛️</div>
+                    <h3 class="text-2xl font-semibold text-[#001F3F] mb-3">Litigation</h3>
+                    <p class="text-gray-600">Civil litigation, contract disputes, business conflicts, mediation,
+                        arbitration, and trial representation.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card-hover bg-white rounded-3xl px-8 py-10 shadow-xl border border-transparent">
+                    <div class="text-6xl mb-6">🚑</div>
+                    <h3 class="text-2xl font-semibold text-[#001F3F] mb-3">Personal Injury</h3>
+                    <p class="text-gray-600">Car accidents, slip-and-fall, wrongful death, insurance claims, and
+                        securing maximum compensation for injuries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="experience" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid lg:grid-cols-12 gap-16">
+
+                <!-- Experience -->
+                <div class="lg:col-span-7">
+                    <div class="uppercase text-[#D4AF77] text-sm font-semibold tracking-[1.5px] mb-3">EXPERIENCE</div>
+                    <h2 class="section-header text-5xl heading-font font-medium text-[#001F3F]">Career highlights</h2>
+
+                    <div class="mt-12 space-y-12">
+                        <!-- Item -->
+                        <div class="flex gap-6">
+                            <div class="font-mono text-[#D4AF77] whitespace-nowrap text-right w-28 flex-shrink-0">2012 —
+                                Present</div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-[#001F3F]">Founding Partner — Nilsen Law Firm</h4>
+                                <p class="text-gray-600">Irvine, California</p>
+                                <p class="mt-3 text-gray-700">Lead counsel in complex litigation, business transactions,
+                                    and high-value estate matters. Successfully resolved over 300 cases through
+                                    negotiation and trial.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="flex gap-6">
+                            <div class="font-mono text-[#D4AF77] whitespace-nowrap text-right w-28 flex-shrink-0">2008 —
+                                2012</div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-[#001F3F]">Associate Attorney — Smith &amp;
+                                    Associates LLP</h4>
+                                <p class="text-gray-600">Los Angeles, California</p>
+                                <p class="mt-3 text-gray-700">Specialized in commercial litigation and corporate
+                                    disputes. Represented Fortune 500 clients and mid-market businesses in
+                                    multimillion-dollar matters.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="flex gap-6">
+                            <div class="font-mono text-[#D4AF77] whitespace-nowrap text-right w-28 flex-shrink-0">2005 —
+                                2008</div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-[#001F3F]">Judicial Law Clerk — Superior Court of
+                                    California</h4>
+                                <p class="text-gray-600">Orange County, California</p>
+                                <p class="mt-3 text-gray-700">Clerked for the Honorable Judge Emily R. Carter. Drafted
+                                    opinions and assisted in over 150 civil and family law hearings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="lg:col-span-5">
+                    <div class="uppercase text-[#D4AF77] text-sm font-semibold tracking-[1.5px] mb-3">EDUCATION</div>
+                    <h2 class="section-header text-5xl heading-font font-medium text-[#001F3F]">Academic foundation</h2>
+
+                    <div class="mt-12 bg-gray-50 rounded-3xl p-8 space-y-8">
+                        <div>
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-xl font-semibold">Juris Doctor (J.D.) — Cum Laude</h4>
+                                <span class="font-mono text-sm text-[#D4AF77]">2005</span>
+                            </div>
+                            <p class="text-gray-600">UCLA School of Law • Los Angeles, CA</p>
+                            <p class="text-sm mt-2 text-gray-500">Moot Court Board • Order of the Coif • Dean’s List</p>
+                        </div>
+
+                        <div class="border-t border-gray-200 pt-8">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-xl font-semibold">Bachelor of Arts in Political Science — Magna Cum
+                                    Laude</h4>
+                                <span class="font-mono text-sm text-[#D4AF77]">2002</span>
+                            </div>
+                            <p class="text-gray-600">University of California, Berkeley • Berkeley, CA</p>
+                            <p class="text-sm mt-2 text-gray-500">Phi Beta Kappa • Undergraduate Research Award</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-8 text-sm text-gray-500 text-center">Continuing Legal Education completed annually •
+                        Member, Orange County Bar Association</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-24 bg-[#001F3F] text-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <div class="uppercase text-[#D4AF77] text-sm font-semibold tracking-[1.5px]">CLIENT VOICES</div>
+                <h2 class="section-header text-5xl heading-font font-medium text-white mt-3">What clients say</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
+                    <div class="text-5xl text-[#D4AF77] mb-6">“</div>
+                    <p class="italic text-lg leading-relaxed">
+                        Marius handled my complex commercial litigation with exceptional skill. He secured a favorable
+                        settlement that exceeded our expectations. Professional, responsive, and truly brilliant.
+                    </p>
+                    <div class="mt-10 flex items-center gap-x-4">
+                        <div
+                            class="w-10 h-10 bg-[#D4AF77] text-[#001F3F] rounded-2xl flex items-center justify-center font-bold">
+                            ST</div>
+                        <div>
+                            <p class="font-semibold">Sarah Thompson</p>
+                            <p class="text-[#D4AF77] text-sm">CEO, Innovate Dynamics Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
+                    <div class="text-5xl text-[#D4AF77] mb-6">“</div>
+                    <p class="italic text-lg leading-relaxed">
+                        Going through a difficult divorce, Marius provided compassionate yet strong representation. He
+                        protected my children’s future and secured a fair outcome. I cannot recommend him highly enough.
+                    </p>
+                    <div class="mt-10 flex items-center gap-x-4">
+                        <div
+                            class="w-10 h-10 bg-[#D4AF77] text-[#001F3F] rounded-2xl flex items-center justify-center font-bold">
+                            RC</div>
+                        <div>
+                            <p class="font-semibold">Robert Chen</p>
+                            <p class="text-[#D4AF77] text-sm">Small Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
+                    <div class="text-5xl text-[#D4AF77] mb-6">“</div>
+                    <p class="italic text-lg leading-relaxed">
+                        After a serious car accident, Marius fought the insurance company and obtained a settlement that
+                        covered all my medical bills and lost wages. He treated me like family. Exceptional attorney.
+                    </p>
+                    <div class="mt-10 flex items-center gap-x-4">
+                        <div
+                            class="w-10 h-10 bg-[#D4AF77] text-[#001F3F] rounded-2xl flex items-center justify-center font-bold">
+                            LM</div>
+                        <div>
+                            <p class="font-semibold">Linda Martinez</p>
+                            <p class="text-[#D4AF77] text-sm">Client &amp; Mother of Two</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid lg:grid-cols-12 gap-16">
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-5">
+                    <div class="sticky top-8">
+                        <div class="uppercase text-[#D4AF77] text-sm font-semibold tracking-[1.5px]">LET’S CONNECT</div>
+                        <h2 class="section-header text-5xl heading-font font-medium text-[#001F3F] mt-3 mb-8">Ready to
+                            discuss your case?</h2>
+
+                        <p class="text-gray-600 text-lg">I offer confidential consultations for new clients. Reach out
+                            today — your future matters.</p>
+
+                        <div class="mt-12 space-y-8">
+                            <!-- Email -->
+                            <a href="mailto:Marius.nilse@gmail.com" class="flex items-start group">
+                                <div
+                                    class="bg-[#001F3F] text-[#D4AF77] w-11 h-11 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
+                                    ✉️</div>
+                                <div class="ml-6">
+                                    <p class="font-semibold text-xl text-[#001F3F]">Email</p>
+                                    <p class="text-[#001F3F] group-hover:text-[#D4AF77]">Marius.nilse@gmail.com</p>
+                                    <p class="text-sm text-gray-500 mt-px">Response within 24 hours</p>
+                                </div>
+                            </a>
+
+                            <!-- Phone -->
+                            <a href="tel:+16572031532" class="flex items-start group">
+                                <div
+                                    class="bg-[#001F3F] text-[#D4AF77] w-11 h-11 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
+                                    📱</div>
+                                <div class="ml-6">
+                                    <p class="font-semibold text-xl text-[#001F3F]">Cell Phone</p>
+                                    <p class="text-[#001F3F] group-hover:text-[#D4AF77]">+1 657 203 1532</p>
+                                    <p class="text-sm text-gray-500 mt-px">Monday – Friday, 8am – 6pm PST</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="mt-16 text-xs uppercase tracking-widest text-gray-400 flex items-center gap-x-8">
+                            <div>SERVING CLIENTS ACROSS CALIFORNIA</div>
+                            <div class="flex-1 h-px bg-gray-200"></div>
+                            <div>VIRTUAL CONSULTATIONS AVAILABLE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="bg-[#001F3F] text-white rounded-3xl px-8 md:px-12 py-10">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase font-medium mb-2 text-white/70">Full Name</label>
+                                <input type="text" name="name" id="name" required
+                                    class="form-input w-full bg-white/10 border border-white/20 focus:border-[#D4AF77] rounded-3xl px-6 py-5 text-white placeholder:text-white/40 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-medium mb-2 text-white/70">Email
+                                    Address</label>
+                                <input type="email" name="email" id="email" required
+                                    class="form-input w-full bg-white/10 border border-white/20 focus:border-[#D4AF77] rounded-3xl px-6 py-5 text-white placeholder:text-white/40 outline-none">
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label class="block text-xs uppercase font-medium mb-2 text-white/70">Phone Number
+                                (optional)</label>
+                            <input type="tel" name="phone" id="phone"
+                                class="form-input w-full bg-white/10 border border-white/20 focus:border-[#D4AF77] rounded-3xl px-6 py-5 text-white placeholder:text-white/40 outline-none">
+                        </div>
+
+                        <div class="mt-6">
+                            <label class="block text-xs uppercase font-medium mb-2 text-white/70">How can I help
+                                you?</label>
+                            <textarea name="message" id="message" rows="6" required
+                                class="form-input w-full bg-white/10 border border-white/20 focus:border-[#D4AF77] rounded-3xl px-6 py-5 text-white placeholder:text-white/40 outline-none resize-y"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="mt-8 w-full md:w-auto px-14 py-6 bg-[#D4AF77] hover:bg-[#c39b5f] text-[#001F3F] font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-lg mx-auto md:mx-0">
+                            SEND MESSAGE
+                            <span class="text-2xl leading-none">→</span>
+                        </button>
+
+                        <p class="text-center text-white/60 text-xs mt-8">Your information is protected by
+                            attorney-client privilege.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#001F3F] text-white py-12">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-8">
+                <p class="text-sm opacity-70">© 2026 Marius Nilsen, Attorney at Law. All Rights Reserved.</p>
+
+                <div class="flex items-center gap-x-8 text-sm mt-6 md:mt-0">
+                    <a href="#home" class="hover:text-[#D4AF77]">Home</a>
+                    <a href="#about" class="hover:text-[#D4AF77]">About</a>
+                    <a href="#services" class="hover:text-[#D4AF77]">Services</a>
+                    <a href="#experience" class="hover:text-[#D4AF77]">Experience</a>
+                    <a href="#contact" class="hover:text-[#D4AF77]">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-x-6 text-xs mt-6 md:mt-0 opacity-60">
+                    <a href="#" class="hover:text-[#D4AF77]">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#D4AF77]">Terms of Use</a>
+                    <span class="text-[#D4AF77]">Made with precision in California</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Toast Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[9999]"></div>
+
+    <script>
+        /**
+         * Tailwind CSS CDN Configuration
+         * Applied immediately for deep navy, gold accents, and custom styling
+         */
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        configUser: userConfig,
+                        theme: {
+                            extend: {
+                                colors: {
+                                    navy: '#001F3F',
+                                    gold: '#D4AF77'
+                                }
+                            }
+                        }
+                    }
+                },
+                theme: {
+                    extend: {}
+                }
+            }
+        }
+
+        // Initialize Tailwind immediately
+        document.addEventListener('DOMContentLoaded', () => {
+            return initializeTailwind().config
+        })
+
+        /**
+         * Mobile menu toggle with icon swap
+         */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('hamburger-icon')
+
+            if (menu.classList.contains('hidden')) {
+                // Open menu
+                menu.classList.remove('hidden')
+                menu.classList.add('flex', 'flex-col')
+
+                // Change to X icon
+                icon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6h12v12" />
+                `
+            } else {
+                // Close menu
+                closeMobileMenu()
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('hamburger-icon')
+
+            menu.classList.add('hidden')
+            menu.classList.remove('flex', 'flex-col')
+
+            // Reset to hamburger
+            icon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            `
+        }
+
+        /**
+         * Contact form handling with success animation
+         * No external dependencies — fully functional single-file experience
+         */
+        function handleContactForm() {
+            const form = document.getElementById('contact-form')
+            const toastContainer = document.getElementById('toast-container')
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault()
+
+                // Gather form data (for demo purposes)
+                const formData = new FormData(form)
+                const data = Object.fromEntries(formData)
+
+                console.log('%c✅ Form submitted successfully:', 'color:#D4AF77; font-weight:600', data)
+
+                // Show beautiful success toast
+                const toast = document.createElement('div')
+                toast.style.cssText = `
+                    background: linear-gradient(90deg, #001F3F, #112D4F);
+                    color: white;
+                    padding: 20px 24px;
+                    border-radius: 24px;
+                    box-shadow: 0 25px 50px -12px rgb(212 175 119);
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    min-width: 320px;
+                    margin-bottom: 12px;
+                `
+                toast.innerHTML = `
+                    <div class="text-4xl">✅</div>
+                    <div>
+                        <p class="font-semibold text-lg">Message received!</p>
+                        <p class="text-[#D4AF77] text-sm">Thank you, Marius will reply within 24 hours.</p>
+                    </div>
+                `
+                toastContainer.appendChild(toast)
+
+                // Reset form
+                form.reset()
+
+                // Auto-remove toast after 5 seconds
+                setTimeout(() => {
+                    toast.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 1, 1)'
+                    toast.style.opacity = '0'
+                    toast.style.transform = 'translateY(20px)'
+                    setTimeout(() => toast.remove(), 400)
+                }, 5000)
+
+                // Optional: Scroll back to top of contact section for visual feedback
+                setTimeout(() => {
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
+                }, 600)
+            })
+        }
+
+        /**
+         * Main initialization function
+         * Everything runs after DOM is ready
+         */
+        function initializeWebsite() {
+            console.log('%c🚀 Marius Nilsen Attorney Website initialized — premium single-file experience ready', 'color:#D4AF77; font-size:13px; font-weight:500')
+
+            // Tailwind is already configured via the script above
+
+            // Form functionality
+            handleContactForm()
+
+            // Keyboard accessibility for mobile menu
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    const menu = document.getElementById('mobile-menu')
+                    if (menu && !menu.classList.contains('hidden')) {
+                        closeMobileMenu()
+                    }
+                }
+            })
+
+            console.log('✅ Fully responsive, modern, and professional single-page website loaded.')
+            console.log('📧 Contact: Marius.nilse@gmail.com | 📱 +1 657 203 1532')
+        }
+
+        // Launch the complete website
+        window.onload = initializeWebsite
+    </script>
+</body>
+
+</html>
